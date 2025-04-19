@@ -73,9 +73,9 @@ extension AppRouter: Routable {
         return self
     }
     
-    public func open(url: URL, animated animate: Bool = true, completion: (() -> Void)? = nil) async throws {
-        let (route, factory, context, routeCompletion) = try parse(url: url)
-        guard let (viewContorller, routeStyle) = await factory(route, context) else { return }
+    public func open(url: URL, context: Any? = nil, animated animate: Bool = true, completion: (() -> Void)? = nil) async throws {
+        let (route, factory, _context, routeCompletion) = try parse(url: url)
+        guard let (viewContorller, routeStyle) = await factory(route, context ?? _context) else { return }
         try await intercept(route: route)
         await navigator.navigate(
             viewContorller,
@@ -86,9 +86,9 @@ extension AppRouter: Routable {
         )
     }
     
-    public func open(url: URL, animated animate: Bool = true, completion: (() -> Void)? = nil) throws {
-        let (route, factory, context, routeCompletion) = try parse(url: url)
-        guard let (viewContorller, routeStyle) = factory(route, context) else { return }
+    public func open(url: URL, context: Any? = nil, animated animate: Bool = true, completion: (() -> Void)? = nil) throws {
+        let (route, factory, _context, routeCompletion) = try parse(url: url)
+        guard let (viewContorller, routeStyle) = factory(route, context ?? _context) else { return }
         Task { @RouteActor [weak self] in
             guard let self else { return }
             try await self.intercept(route: route)

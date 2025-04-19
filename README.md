@@ -63,7 +63,7 @@ struct LoginInterceptor: RouteInterceptor {
     
     func intercept(_ route: any Route) async throws {
         if route.path.contains("userInfo") {
-            AppRouter.shared.open(".../login")
+            try await AppRouter.shared.open(".../login")
             throw MyError.notLoggedIn
         }
     }
