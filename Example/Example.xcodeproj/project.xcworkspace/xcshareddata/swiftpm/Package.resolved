@@ -1,0 +1,24 @@
+{
+  "originHash" : "4323088691ac3d36a1973cc1b6d0e0ec5c4e8fe3bcbd04109ef82ad50edb2346",
+  "pins" : [
+    {
+      "identity" : "lookinserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/QMUI/LookinServer",
+      "state" : {
+        "revision" : "e553d1b689d147817dc54ad5c28fcff71e860101",
+        "version" : "1.2.8"
+      }
+    },
+    {
+      "identity" : "swift-mutex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swhitty/swift-mutex.git",
+      "state" : {
+        "revision" : "44bbc8c4ed4e123fe34f687f1741e6c46c0b62b7",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}
