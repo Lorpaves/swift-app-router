@@ -4,7 +4,7 @@
 
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20visionOS-lightgrey)
 ![Swift](https://img.shields.io/badge/swift-5.9-orange)
-![License](https://img.shields.io/github/license/your-username/swift-app-route)
+![License](https://img.shields.io/github/license/lorpaves/swift-app-route)
 
 ## 🧩 Features
 
